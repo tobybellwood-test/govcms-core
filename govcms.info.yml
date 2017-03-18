@@ -1,0 +1,39 @@
+name: govCMS
+type: profile
+description: 'A distribution for government and the public sector in Australia.'
+core: 8.x
+
+dependencies:
+  - color
+  - ctools
+  - ckeditor
+  - datetime_range
+  - embed
+  - entity
+  - entity_embed
+  - entity_browser
+  - features
+  - inline_entity_form
+  - media_entity
+  - media_entity_document
+  - media_entity_image
+  - pathauto
+  - page_manager
+  - page_manager_ui
+  - panels
+  - panels_ipe
+  - panelizer
+  - panelizer_quickedit
+  - scheduled_updates
+  - syslog
+  - telephone
+  - workbench_moderation
+
+themes:
+  - bartik
+  - adminimal_theme
+
+base profile:
+  name: lightning
+  excluded_dependencies:
+  - dblog
