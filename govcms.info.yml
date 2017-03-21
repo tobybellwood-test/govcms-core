@@ -22,7 +22,7 @@ dependencies:
   # Custom modules
 
 themes:
-  - bartik
+  - govcmsui
   - adminimal_theme
 
 base profile:
