@@ -5,21 +5,21 @@ core: 8.x
 
 dependencies:
   # Drupal Core modules
-  - color
-  - ctools
   - ckeditor
+  - color
+  - syslog
+
+  # Contrib modules
+  - adminimal_admin_toolbar
+  - ctools
   - entity
   - features
+  - password_policy
   - media_entity
   - media_entity_document
   - media_entity_image
   - pathauto
-  - syslog
   - workbench_moderation
-
-  # Contrib modules
-  - adminimal_admin_toolbar
-  - password_policy
 
   # Custom modules
 
