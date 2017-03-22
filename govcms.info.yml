@@ -3,6 +3,9 @@ type: profile
 description: 'A distribution for government and the public sector in Australia.'
 core: 8.x
 
+distribution:
+  name: govCMS
+
 dependencies:
   # Drupal Core modules
   - ckeditor
