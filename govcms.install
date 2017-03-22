@@ -6,6 +6,16 @@
  */
 
 /**
+ * Define a default theme constant.
+ */
+define('GOVCMS_DEFAULT_THEME', 'govcmsui');
+
+/**
+ * Define the admin theme.
+ */
+define('GOVCMS_DEFAULT_ADMIN_THEME', 'adminimal_theme');
+
+/**
  * Implements hook_install().
  *
  * Perform actions to set up the site for govCMS Profile.
@@ -13,16 +23,27 @@
  * @see system_install()
  */
 function govcms_install() {
-    // Set the default and admin theme.
-    \Drupal::configFactory()
-        ->getEditable('system.theme')
-        ->set('default', 'govcmsui')
-        ->set('admin', 'adminimal_theme')
-        ->save(TRUE);
+  // Create a Home link in the main menu.
+  $menu_link = entity_create('menu_link', array(
+    'link_title' => t('Home'),
+    'link_path' => '<front>',
+    'menu_name' => 'main',
+  ));
+  $menu_link->save();
 
-    // Enable the admin theme.
-    \Drupal::configFactory()
-        ->getEditable('node.settings')
-        ->set('use_admin_theme', TRUE)
-        ->save(TRUE);
+  // Set router rebuild flag.
+  \Drupal::service('router.builder')->setRebuildNeeded();
+
+  // Set the default and admin theme.
+  \Drupal::configFactory()
+    ->getEditable('system.theme')
+    ->set('default', GOVCMS_DEFAULT_THEME)
+    ->set('admin', GOVCMS_DEFAULT_ADMIN_THEME)
+    ->save(TRUE);
+
+  // Enable the admin theme.
+  \Drupal::configFactory()
+    ->getEditable('node.settings')
+    ->set('use_admin_theme', TRUE)
+    ->save(TRUE);
 }
