@@ -5,6 +5,9 @@
  * Install, update and uninstall hooks for the govCMS subprofile.
  */
 
+use Drupal\user\Entity\User;
+use Drupal\user\RoleInterface;
+
 /**
  * Define a default theme constant.
  */
@@ -23,16 +26,19 @@ define('GOVCMS_DEFAULT_ADMIN_THEME', 'adminimal_theme');
  * @see system_install()
  */
 function govcms_install() {
-  // Create a Home link in the main menu.
-  $menu_link = entity_create('menu_link', array(
-    'link_title' => t('Home'),
-    'link_path' => '<front>',
-    'menu_name' => 'main',
-  ));
-  $menu_link->save();
+  // Set front page to "node".
+  \Drupal::configFactory()->getEditable('system.site')->set('page.front', '/node')->save(TRUE);
 
-  // Set router rebuild flag.
-  \Drupal::service('router.builder')->setRebuildNeeded();
+  // Allow visitor account creation with administrative approval.
+  $user_settings = \Drupal::configFactory()->getEditable('user.settings');
+  $user_settings->set('register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL)->save(TRUE);
+
+  // Allow authenticated users to use shortcuts.
+  user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, ['access shortcuts']);
+
+  // Allow all users to use search.
+  user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, ['search content']);
+  user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, ['search content']);
 
   // Set the default and admin theme.
   \Drupal::configFactory()
@@ -42,8 +48,25 @@ function govcms_install() {
     ->save(TRUE);
 
   // Enable the admin theme.
+  \Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
+
+  // Uninstall the default themes enabled by Acquia lightning.
+  \Drupal::service('theme_installer')->uninstall(['bartik']);
+
+  // Set the path to the logo, favicon and README file based on install directory.
+  $govcms_path = drupal_get_path('profile', 'govcms');
   \Drupal::configFactory()
-    ->getEditable('node.settings')
-    ->set('use_admin_theme', TRUE)
+    ->getEditable('system.theme.global')
+    ->set('logo', [
+      'path' => $govcms_path . '/logo.svg',
+      'url' => '',
+      'use_default' => FALSE,
+    ])
+    ->set('favicon', [
+      'mimetype' => 'image/vnd.microsoft.icon',
+      'path' => $govcms_path. '/favicon.ico',
+      'url' => '',
+      'use_default' => FALSE,
+    ])
     ->save(TRUE);
 }
