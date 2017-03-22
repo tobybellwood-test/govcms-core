@@ -64,6 +64,7 @@ No matter what local environment you choose to use, the following guidelines sho
 * The blt alias must be installed.
 * MySQL must use mysql://drupal:drupal@localhost/drupal:3306
 * Your LAMP stack must have host entry for http://local.govcms.com/ pointing to docroot
+* PHP memory limit >= 256MB/512MB
 
 1. Enter the project root, and run the following commands in order (Run once):
 
