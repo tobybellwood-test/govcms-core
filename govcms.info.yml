@@ -18,6 +18,7 @@ dependencies:
   - workbench_moderation
 
   # Contrib modules
+  - adminimal_admin_toolbar
 
   # Custom modules
 
