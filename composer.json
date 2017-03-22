@@ -21,6 +21,7 @@
         "drupal/asset_injector": "1.2",
         "drupal/core": "8.2.7",
         "drupal/easy_breadcrumb": "1.6",
+        "drupal/password_policy": "3.0.0-alpha3",
         "govcms/govcms-ui": "dev-master"
     },
     "extra": {

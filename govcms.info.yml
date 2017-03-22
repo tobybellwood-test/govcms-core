@@ -19,6 +19,7 @@ dependencies:
 
   # Contrib modules
   - adminimal_admin_toolbar
+  - password_policy
 
   # Custom modules
 
