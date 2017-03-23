@@ -17,7 +17,6 @@ dependencies:
   - contact
   - contextual
   - datetime
-  - datetime_range
   - editor
   - field
   - field_ui
