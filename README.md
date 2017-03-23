@@ -33,6 +33,11 @@ cd MY_PROJECT
 composer update
 ```
 
+And you can update govCMS Distribution Core via
+```
+composer update govcms/govcms
+```
+
 #### Packaged installation
 
 govCMS exists as packaged versions on both the [Github](https://github.com/govCMS/govCMS) and [Drupal.org](https://www.drupal.org/project/govcms) project pages. These compressed archives are available in both zip and tar.gz format to download and use as needed.
@@ -59,6 +64,7 @@ No matter what local environment you choose to use, the following guidelines sho
 * The blt alias must be installed.
 * MySQL must use mysql://drupal:drupal@localhost/drupal:3306
 * Your LAMP stack must have host entry for http://local.govcms.com/ pointing to docroot
+* PHP memory limit >= 2G (required by blt)
 
 1. Enter the project root, and run the following commands in order (Run once):
 
