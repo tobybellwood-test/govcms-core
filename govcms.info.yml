@@ -89,6 +89,9 @@ dependencies:
 
   # Custom modules
 
+  # Features
+  - govcms_austism_password_policy
+
 themes:
   - govcmsui
   - adminimal_theme
