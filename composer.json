@@ -26,6 +26,7 @@
         "drupal/ds": "^2.6",
         "drupal/default_content": "^1.0@alpha",
         "drupal/easy_breadcrumb": "1.6",
+        "drupal/entityqueue": "^1.0@alpha",
         "drupal/field_group": "^1.0@RC",
         "drupal/feeds": "3.x-dev",
         "drupal/facets": "^1.0@alpha",
@@ -46,8 +47,7 @@
         "drupal/views_data_export": "^1.0@alpha",
         "drupal/view_unpublished": "^1.0@alpha",
         "drupal/webform": "^5.0@beta",
-        "govcms/govcms-ui": "dev-master",
-        "drupal/entityqueue": "^1.0@alpha"
+        "govcms/govcms-ui": "dev-master"
     },
     "extra": {
         "enable-patching": true,
