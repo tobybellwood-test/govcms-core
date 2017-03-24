@@ -94,7 +94,6 @@ dependencies:
   - seckit
   - simple_sitemap
   - token
-  - username_enumeration_prevention
   - video_embed_field
   - video_embed_media
   - views_infinite_scroll
