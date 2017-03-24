@@ -1,6 +1,6 @@
 name: News
-description: 'Provides News content type and related configuration (Optional)'
-package: govCMS
+description: 'Provides News content type and related configuration'
+package: govCMS Optional
 type: module
 core: 8.x
 dependencies:
