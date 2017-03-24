@@ -71,10 +71,12 @@ dependencies:
   - inline_entity_form
   - layout_plugin
   - linkit
+  - m4032404
   - media_entity
   - media_entity_document
   - media_entity_image
   - metatag
+  - module_filter
   - page_manager
   - page_manager_ui
   - panelizer
