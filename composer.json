@@ -68,7 +68,7 @@
         "drupal/module_filter": "^3.0",
         "drupal/multiversion": "^1.0@alpha",
         "drupal/page_manager": "^1.0@alpha",
-        "drupal/panelizer": "^4.0@beta",
+        "drupal/panelizer": "^3.0@beta",
         "drupal/panels": "^3.0@beta",
         "drupal/paragraphs": "^1.1",
         "drupal/password_policy": "3.0.0-alpha3",
