@@ -44,6 +44,7 @@
         "drupal/features": "^3.5",
         "drupal/feeds": "3.x-dev",
         "drupal/field_group": "^1.0@RC",
+        "drupal/google_analytics": "^2.1",
         "drupal/honeypot": "^1.23",
         "drupal/inline_entity_form": "^1.0@beta",
         "drupal/key_value": "^1.0",
@@ -68,7 +69,7 @@
         "drupal/redirect": "^1.0@alpha",
         "drupal/robotstxt": "^1.0",
         "drupal/rules": "^3.0@alpha",
-        "drupal/scheduled_updates": "^1.0@alpha"
+        "drupal/scheduled_updates": "^1.0@alpha",
         "drupal/search_api": "^1.0@beta",
         "drupal/search_api_attachments": "^1.0@alpha",
         "drupal/search_api_autocomplete": "^1.0@alpha",
