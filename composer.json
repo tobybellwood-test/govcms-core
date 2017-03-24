@@ -41,6 +41,7 @@
         "drupal/entity_reference_revisions": "^1.2",
         "drupal/entityqueue": "^1.0@alpha",
         "drupal/facets": "^1.0@alpha",
+        "drupal/focal_point": "^1.0@beta",
         "drupal/features": "^3.5",
         "drupal/feeds": "3.x-dev",
         "drupal/field_group": "^1.0@RC",
