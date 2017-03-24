@@ -11,4 +11,4 @@ features:
 logo:
   path: profiles/contrib/govcms/logo.svg
   url: ''
-  use_default: false
+  use_default: true
