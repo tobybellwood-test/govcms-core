@@ -1,6 +1,6 @@
 country:
-  default: 'Australia'
-first_day: 0
+  default: AU
+first_day: 1
 timezone:
   default: Australia/Sydney
   user:
