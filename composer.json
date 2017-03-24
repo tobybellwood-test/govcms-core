@@ -84,6 +84,7 @@
         "drupal/shield": "^1.0",
         "drupal/simple_sitemap": "^2.8",
         "drupal/swiftmailer": "^1.0@beta",
+        "drupal/taxonomy_menu": "^3.3",
         "drupal/token": "^1.0@RC",
         "drupal/typed_data": "^1.0@alpha",
         "drupal/username_enumeration_prevention": "^1.0@beta",
