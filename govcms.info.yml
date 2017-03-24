@@ -98,6 +98,7 @@ dependencies:
   - video_embed_media
   - views_infinite_scroll
   - webform
+  - webform_ui
   - workbench_moderation
 
   # Custom modules
