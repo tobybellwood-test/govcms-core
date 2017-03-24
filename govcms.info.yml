@@ -61,6 +61,7 @@ dependencies:
   - embed
   - features
   - features_ui
+  - honeypot
   - inline_entity_form
   - layout_plugin
   - media_entity
