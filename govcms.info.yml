@@ -18,10 +18,11 @@ dependencies:
   - contextual
   - datetime
   - editor
+  - entity_reference
   - field
   - field_ui
-  - filter
   - file
+  - filter
   - help
   - history
   - image
@@ -34,58 +35,68 @@ dependencies:
   - quickedit
   - rdf
   - responsive_image
-  - system (>=8.2)
   - shortcut
   - syslog
-  - text
+  - system (>=8.2)
   - taxonomy
-  - toolbar
   - telephone
+  - text
+  - toolbar
   - user
   - views
   - views_ui
 
   # Contrib modules
+  - address
   - admin_toolbar
   - adminimal_admin_toolbar
+  - chosen
+  - config_update
+  - contact_storage
   - ctools
   - ctools_views
   - ctools_block
-  - config_update
-  - contact_storage
   - diff
-  - entity
-  - entity_embed
-  - entity_browser
-  - entity_block
+  - easy_breadcrumb
   - embed
+  - entity
+  - entity_block
+  - entity_browser
+  - entity_embed
+  - entity_reference_revisions
   - features
   - features_ui
+  - field_group
   - honeypot
   - inline_entity_form
   - layout_plugin
+  - linkit
   - media_entity
   - media_entity_document
   - media_entity_image
   - metatag
-  - pathauto
   - page_manager
   - page_manager_ui
+  - panelizer
+  - panelizer_quickedit
+  - panels
+  - panels_ipe
   - password_policy
   - password_policy_history
   - password_policy_username
-  - panels
-  - panels_ipe
-  - panelizer
-  - panelizer_quickedit
+  - pathauto
+  - redirect
   - scheduled_updates
   - search_api
   - search_api_views_taxonomy
   - seckit
+  - simple_sitemap
   - token
+  - username_enumeration_prevention
   - video_embed_field
   - video_embed_media
   - views_infinite_scroll
+  - webform
   - workbench_moderation
 
   # Custom modules
