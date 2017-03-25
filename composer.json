@@ -8,15 +8,38 @@
     "conflict": {
         "drupal/core": "7.*"
     },
-    "repositories": {
-        "drupal": {
+    "config": {
+        "secure-http": false
+    },
+    "repositories": [
+        {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "harvesthq/chosen",
+                "version": "1.7.0",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/harvesthq/chosen/archive/v1.7.0.zip",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "https://github.com/harvesthq/chosen.git",
+                    "type": "git",
+                    "reference": "origin/master"
+                },
+                "require": {
+                    "composer/installers": "^1.2.0"
+                }
+            }
         }
-    },
+    ],
     "require": {
         "cweagans/composer-patches": "^1.5.0",
-        "composer/installers": "^1.0",
+        "composer/installers": "^1.2.0",
         "acquia/lightning": "^2.0.5",
         "drupal/address": "^1.0@RC",
         "drupal/admin_toolbar": "^1.18",
@@ -103,6 +126,7 @@
         "drupal/webform": "^5.0@beta",
         "drupal/workbench_moderation": "^1.2",
         "drupal/workspace": "^1.0@alpha",
+        "harvesthq/chosen": "^1.7",
         "govcms/govcms-ui": "dev-master"
     },
     "extra": {
@@ -132,22 +156,12 @@
             "docroot/themes/custom/{$name}": [
                 "type:drupal-custom-theme"
             ],
-            "docroot/libraries": [
+            "docroot/libraries/{$name}": [
                 "type:drupal-library"
             ],
             "drush/contrib/{$name}": [
                 "type:drupal-drush"
             ]
-        },
-        "patches": {
-            "drupal/core": {
-                "2652138 - ImageFormatter does not support SVGs":
-                "https://www.drupal.org/files/issues/2652138.patch",
-                "2765525 - Add AJAX command to add style sheets to CKEditor instances":
-                "https://www.drupal.org/files/issues/2765525-30-8.2.x.patch",
-                "1356276 - Allow profiles to provide a base/parent profile and load them in the correct order":
-                "https://www.drupal.org/files/issues/1356276-276-8.2.x.patch"
-            }
         }
     },
     "autoload": {
