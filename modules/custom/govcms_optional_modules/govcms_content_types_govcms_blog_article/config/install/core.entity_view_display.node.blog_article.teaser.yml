@@ -3,14 +3,14 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.news.body
-    - node.type.news
+    - field.field.node.blog_article.body
+    - node.type.blog_article
   module:
     - text
     - user
-id: node.news.teaser
+id: node.blog_article.teaser
 targetEntityType: node
-bundle: news
+bundle: blog_article
 mode: teaser
 content:
   body:
