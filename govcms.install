@@ -81,11 +81,6 @@ function govcms_install_tasks(&$install_state) {
     'type' => 'form',
     'function' => 'Drupal\govcms\Installer\Form\govCMSInstallerForm',
   );
-  $tasks['govcms_example_form'] = array(
-    'display_name' => t('Install example contents'),
-    'type' => 'form',
-    'function' => 'Drupal\govcms\Installer\Form\govCMSInstallerForm',
-  );
 
   return $tasks;
 }
