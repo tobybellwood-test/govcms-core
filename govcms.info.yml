@@ -70,7 +70,6 @@ dependencies:
   - inline_entity_form
   - layout_plugin
   - linkit
-  - m4032404
   - media_entity
   - media_entity_document
   - media_entity_image
@@ -101,8 +100,6 @@ dependencies:
   - workbench_moderation
 
   # Custom modules
-
-  # Features
   - govcms_austism_password_policy
 
 themes:
