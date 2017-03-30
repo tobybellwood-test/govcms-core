@@ -57,6 +57,13 @@ class govCMSInstallerForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form['#title'] = t('Optional');
 
+    $form['govcms_blog'] = [
+      '#type' => 'checkbox',
+      '#title' => 'govCMS blog article',
+      '#description' => t("Defines blog article content type"),
+      '#default_value' => TRUE,
+    ];
+
     $form['warning'] = [
       '#markup' => "<p><strong>Warning:</strong> Don't install the optional modules if you're upgrading from Drupal 7 - you need to start from a blank site.</p>",
     ];
@@ -76,6 +83,13 @@ class govCMSInstallerForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    // TODO: Implement submitForm() method.
+    $input = $form_state->getUserInput();
+    if (isset($input['govcms_blog'])) {
+      $govcms_blog = !empty($input['govcms_blog']);
+    }
+
+    if ($govcms_blog) {
+      $this->moduleInstaller->install(['govcms_content_types_govcms_blog_article']);
+    }
   }
 }
