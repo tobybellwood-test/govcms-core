@@ -6,12 +6,21 @@ dependencies:
     - field.field.node.blog_article.field_attachments
     - field.field.node.blog_article.field_categories
     - field.field.node.blog_article.field_featured_image
+    - field.field.node.blog_article.field_meta_tags
     - node.type.blog_article
   module:
     - file
     - image
+    - metatag
+    - panelizer
     - text
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.blog_article.default
 targetEntityType: node
 bundle: blog_article
@@ -44,6 +53,18 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+  field_meta_tags:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
   links:
     weight: 100
+    settings: {  }
+    third_party_settings: {  }
+  workbench_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }
