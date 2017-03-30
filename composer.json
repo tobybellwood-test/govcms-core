@@ -8,7 +8,7 @@
         "composer/installers": "^1.2.0",
         "cweagans/composer-patches": "^1.6.0",
         "wikimedia/composer-merge-plugin": "^1.4.0",
-        "govcms/config": "8.3.x-dev"
+        "govcms/config": "dev-8.x-3.x"
     },
     "extra": {
         "composer-exit-on-patch-failure": true,
