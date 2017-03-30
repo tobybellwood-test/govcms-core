@@ -7,6 +7,7 @@
 
 use Drupal\user\Entity\User;
 use Drupal\user\RoleInterface;
+use Drupal\shortcut\Entity\Shortcut;
 
 /**
  * Define a default theme constant.
@@ -27,14 +28,27 @@ define('GOVCMS_DEFAULT_ADMIN_THEME', 'adminimal_theme');
  */
 function govcms_install() {
   // Set front page to "node".
-  \Drupal::configFactory()->getEditable('system.site')->set('page.front', '/node')->save(TRUE);
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('page.front', '/node')
+    ->save(TRUE);
 
   // Restrict user registration to admin role creation.
   $user_settings = \Drupal::configFactory()->getEditable('user.settings');
-  $user_settings->set('register', USER_REGISTER_ADMINISTRATORS_ONLY)->save(TRUE);
+  $user_settings->set('register', USER_REGISTER_ADMINISTRATORS_ONLY)
+    ->save(TRUE);
 
   // Allow authenticated users to use shortcuts.
   user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, ['access shortcuts']);
+  // Populate the default shortcut set.
+  Shortcut::create(
+    [
+      'shortcut_set' => 'default',
+      'title' => t('Content library'),
+      'weight' => 1,
+      'link' => ['uri' => 'internal:/node/add'],
+    ]
+  )->save();
 
   // Allow all users to use search.
   user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, ['search content']);
@@ -48,7 +62,10 @@ function govcms_install() {
     ->save(TRUE);
 
   // Enable the admin theme.
-  \Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
+  \Drupal::configFactory()
+    ->getEditable('node.settings')
+    ->set('use_admin_theme', TRUE)
+    ->save(TRUE);
 
   // Uninstall the default themes enabled by Acquia lightning.
   \Drupal::service('theme_installer')->uninstall(['bartik']);
@@ -64,7 +81,7 @@ function govcms_install() {
     ])
     ->set('favicon', [
       'mimetype' => 'image/vnd.microsoft.icon',
-      'path' => $govcms_path. '/favicon.ico',
+      'path' => $govcms_path . '/favicon.ico',
       'url' => '',
       'use_default' => FALSE,
     ])
