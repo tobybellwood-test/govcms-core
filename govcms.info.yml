@@ -47,7 +47,6 @@ dependencies:
   - views_ui
 
   # Contrib modules
-  - address
   - admin_toolbar
   - adminimal_admin_toolbar
   - chosen
