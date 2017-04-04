@@ -3,10 +3,12 @@ description: 'Defines blog article content type'
 type: module
 core: 8.x
 dependencies:
+  - block
   - entity_browser
   - features
   - field
   - file
+  - govcms_content_types_govcms_categories
   - image
   - inline_entity_form
   - menu_ui
@@ -15,10 +17,11 @@ dependencies:
   - panelizer
   - path
   - pathauto
+  - system
   - taxonomy
   - text
   - user
   - views
   - workbench_moderation
 version: 8.x-0.2
-package: govcms_content_types
+package: 'govCMS content types'

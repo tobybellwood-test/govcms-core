@@ -1,0 +1,19 @@
+name: 'govCMS categories'
+description: 'Define a  taxonomy vocabulary called "categories", which can be used to organise content'
+type: module
+core: 8.x
+version: 8.x-0.1
+package: 'govCMS content types'
+dependencies:
+  - field
+  - file
+  - govcms_content_types_govcms_blog_article
+  - image
+  - inline_entity_form
+  - metatag
+  - panelizer
+  - path
+  - taxonomy
+  - text
+  - user
+  - workbench_moderation

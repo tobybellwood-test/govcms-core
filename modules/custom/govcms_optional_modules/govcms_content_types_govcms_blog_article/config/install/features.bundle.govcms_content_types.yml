@@ -1,7 +1,7 @@
 langcode: en
 status: true
 dependencies: {  }
-name: govcms_content_types
+name: 'govCMS content types'
 machine_name: govcms_content_types
 description: 'Auto-generated bundle from package govcms_content_types'
 assignments:
@@ -93,5 +93,5 @@ assignments:
         filter_format: filter_format
     enabled: true
     weight: 7
-profile_name: ''
+profile_name: govcms
 is_profile: false

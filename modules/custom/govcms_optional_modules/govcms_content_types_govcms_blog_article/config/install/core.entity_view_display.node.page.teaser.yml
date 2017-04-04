@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.field.node.page.body
     - field.field.node.page.field_attachments
     - field.field.node.page.field_categories
@@ -10,8 +11,6 @@ dependencies:
     - field.field.node.page.scheduled_update
     - node.type.page
   module:
-    - file
-    - metatag
     - panelizer
     - text
     - user
@@ -21,44 +20,30 @@ third_party_settings:
     custom: false
     allow: false
     default: default
-id: node.page.default
+id: node.page.teaser
 targetEntityType: node
 bundle: page
-mode: default
+mode: teaser
 content:
   body:
     label: hidden
-    type: text_default
-    weight: 0
-    settings: {  }
-    third_party_settings: {  }
-  field_attachments:
-    weight: 4
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: file_default
-  field_categories:
-    weight: 3
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-  field_meta_tags:
-    type: metatag_empty_formatter
-    weight: 2
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-  links:
+    type: text_summary_or_trimmed
     weight: 1
-    settings: {  }
+    settings:
+      trim_length: 300
     third_party_settings: {  }
-  workbench_moderation_control:
-    weight: -20
-    settings: {  }
+  field_categories:
+    type: entity_reference_entity_view
+    weight: 0
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: false
     third_party_settings: {  }
 hidden:
+  field_attachments: true
+  field_meta_tags: true
+  links: true
   panelizer: true
   scheduled_update: true
+  workbench_moderation_control: true

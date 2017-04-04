@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.full
     - field.field.node.blog_article.body
     - field.field.node.blog_article.field_attachments
     - field.field.node.blog_article.field_categories
@@ -12,6 +11,7 @@ dependencies:
   module:
     - file
     - image
+    - metatag
     - panelizer
     - text
     - user
@@ -21,39 +21,50 @@ third_party_settings:
     custom: false
     allow: false
     default: default
-id: node.blog_article.full
+id: node.blog_article.default
 targetEntityType: node
 bundle: blog_article
-mode: full
+mode: default
 content:
   body:
     label: hidden
     type: text_default
-    weight: 2
+    weight: 101
     settings: {  }
     third_party_settings: {  }
   field_attachments:
-    weight: 3
-    label: visually_hidden
+    weight: 106
+    label: above
     settings: {  }
     third_party_settings: {  }
     type: file_default
   field_categories:
-    weight: 0
-    label: visually_hidden
+    weight: 107
+    label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_featured_image:
-    weight: 1
-    label: hidden
+    weight: 105
+    label: above
     settings:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
     type: image
-hidden:
-  field_meta_tags: true
-  links: true
-  workbench_moderation_control: true
+  field_meta_tags:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+  workbench_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

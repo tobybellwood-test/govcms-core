@@ -3,15 +3,15 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
-    - field.field.node.blog_article.body
-    - field.field.node.blog_article.field_attachments
-    - field.field.node.blog_article.field_categories
-    - field.field.node.blog_article.field_featured_image
-    - field.field.node.blog_article.field_meta_tags
-    - node.type.blog_article
+    - field.field.node.page.body
+    - field.field.node.page.field_attachments
+    - field.field.node.page.field_categories
+    - field.field.node.page.field_meta_tags
+    - field.field.node.page.panelizer
+    - field.field.node.page.scheduled_update
+    - node.type.page
   module:
     - file
-    - image
     - panelizer
     - text
     - user
@@ -21,39 +21,33 @@ third_party_settings:
     custom: false
     allow: false
     default: default
-id: node.blog_article.full
+id: node.page.full
 targetEntityType: node
-bundle: blog_article
+bundle: page
 mode: full
 content:
   body:
     label: hidden
     type: text_default
-    weight: 2
+    weight: 1
     settings: {  }
     third_party_settings: {  }
   field_attachments:
-    weight: 3
+    weight: 2
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
     type: file_default
   field_categories:
     weight: 0
-    label: visually_hidden
+    label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_featured_image:
-    weight: 1
-    label: hidden
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
 hidden:
   field_meta_tags: true
   links: true
+  panelizer: true
+  scheduled_update: true
   workbench_moderation_control: true
