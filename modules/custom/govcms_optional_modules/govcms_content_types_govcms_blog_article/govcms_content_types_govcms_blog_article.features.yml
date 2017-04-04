@@ -1,4 +1,2 @@
 bundle: govcms_content_types
-excluded:
-  - taxonomy.vocabulary.categories
 required: true
