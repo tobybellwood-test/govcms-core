@@ -7,14 +7,14 @@ dependencies:
     - views
   theme:
     - govcmsui
-id: views_block__govcms_blog_article_views_block_3
+id: views_block__govcms_blog_article_views_block_2
 theme: govcmsui
 region: sidebar_second
-weight: -3
+weight: -4
 provider: null
-plugin: 'views_block:govcms_blog_article_views-block_3'
+plugin: 'views_block:govcms_blog_article_views-block_2'
 settings:
-  id: 'views_block:govcms_blog_article_views-block_3'
+  id: 'views_block:govcms_blog_article_views-block_2'
   label: ''
   provider: views
   label_display: visible

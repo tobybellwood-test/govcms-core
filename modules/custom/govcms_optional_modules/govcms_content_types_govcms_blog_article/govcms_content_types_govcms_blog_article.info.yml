@@ -8,7 +8,6 @@ dependencies:
   - features
   - field
   - file
-  - govcms_content_types_govcms_categories
   - image
   - inline_entity_form
   - menu_ui
@@ -23,5 +22,5 @@ dependencies:
   - user
   - views
   - workbench_moderation
-version: 8.x-0.2
+version: 8.x-0.3
 package: 'govCMS content types'
