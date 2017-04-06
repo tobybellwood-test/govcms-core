@@ -1,11 +1,9 @@
-name: 'govCMS blog article'
-description: 'Defines blog article content type'
+name: 'govCMS Blog article'
+description: 'Provides Blog article content type and related configuration. Use <em>Blog articles</em> to reach your target audience directly. '
 type: module
 core: 8.x
 dependencies:
   - block
-  - entity_browser
-  - features
   - field
   - file
   - image

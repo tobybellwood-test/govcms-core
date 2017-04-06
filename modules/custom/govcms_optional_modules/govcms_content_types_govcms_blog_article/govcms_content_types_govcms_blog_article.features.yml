@@ -1,24 +1,15 @@
 bundle: govcms_content_types
 excluded:
   - block.block.govcmsui_main_menu
+  - field.field.node.blog_article.body
+  - field.field.node.blog_article.field_attachments
+  - field.field.node.blog_article.field_featured_image
+  - field.field.node.blog_article.field_meta_tags
+  - system.menu.main
+required:
   - core.entity_form_display.node.page.default
   - core.entity_view_display.node.page.default
   - core.entity_view_display.node.page.full
   - core.entity_view_display.node.page.teaser
-  - system.menu.main
-  - workbench_moderation.moderation_state.archived
-  - workbench_moderation.moderation_state.draft
-  - workbench_moderation.moderation_state.needs_review
-  - workbench_moderation.moderation_state.published
-  - workbench_moderation.moderation_state_transition.archived_published
-  - workbench_moderation.moderation_state_transition.draft_draft
-  - workbench_moderation.moderation_state_transition.draft_needs_review
-  - workbench_moderation.moderation_state_transition.draft_published
-  - workbench_moderation.moderation_state_transition.needs_review_draft
-  - workbench_moderation.moderation_state_transition.needs_review_needs_review
-  - workbench_moderation.moderation_state_transition.needs_review_published
-  - workbench_moderation.moderation_state_transition.published_archived
-  - workbench_moderation.moderation_state_transition.published_draft
-  - workbench_moderation.moderation_state_transition.published_published
-  - views.view.glossary
-required: true
+  - field.field.node.page.field_categories
+  - taxonomy.vocabulary.categories
