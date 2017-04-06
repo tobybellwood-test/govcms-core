@@ -64,6 +64,13 @@ class govCMSInstallerForm extends FormBase {
       '#default_value' => TRUE,
     ];
 
+    $form['govcms_event'] = [
+      '#type' => 'checkbox',
+      '#title' => 'govCMS event',
+      '#description' => t("Defines event content type"),
+      '#default_value' => TRUE,
+    ];
+
     $form['warning'] = [
       '#markup' => "<p><strong>Warning:</strong> Don't install the optional modules if you're upgrading from Drupal 7 - you need to start from a blank site.</p>",
     ];
@@ -88,8 +95,16 @@ class govCMSInstallerForm extends FormBase {
       $govcms_blog = !empty($input['govcms_blog']);
     }
 
+    if (isset($input['govcms_event'])) {
+      $govcms_event = !empty($input['govcms_event']);
+    }
+
     if ($govcms_blog) {
       $this->moduleInstaller->install(['govcms_content_types_govcms_blog_article']);
+    }
+
+    if ($govcms_event) {
+      $this->moduleInstaller->install(['govcms_content_types_govcms_event']);
     }
   }
 }
