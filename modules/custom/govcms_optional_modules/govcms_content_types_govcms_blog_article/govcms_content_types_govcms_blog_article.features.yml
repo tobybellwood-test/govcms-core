@@ -1,6 +1,7 @@
 bundle: govcms_content_types
 excluded:
-  - block.block.govcmsui_main_menu
   - system.menu.main
+  - user.role.blog_article_creator
+  - user.role.blog_article_reviewer
 required:
   - taxonomy.vocabulary.categories

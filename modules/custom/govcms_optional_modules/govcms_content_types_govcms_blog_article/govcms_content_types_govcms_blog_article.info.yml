@@ -6,6 +6,7 @@ dependencies:
   - block
   - field
   - file
+  - govcms_content_types_govcms_event
   - image
   - inline_entity_form
   - menu_ui

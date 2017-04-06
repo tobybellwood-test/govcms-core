@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: blog_article_reviewer
-label: 'Blog article reviewer'
-weight: 8
-is_admin: null

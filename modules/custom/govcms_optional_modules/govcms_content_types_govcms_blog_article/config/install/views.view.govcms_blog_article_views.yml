@@ -3,13 +3,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.storage.node.field_categories
     - node.type.blog_article
     - system.menu.main
-    - taxonomy.vocabulary.categories
   module:
     - node
-    - taxonomy
     - user
 id: govcms_blog_article_views
 label: 'govCMS Blog Article Views'
@@ -527,12 +524,10 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
-      tags:
-        - 'config:field.storage.node.field_categories'
+      tags: {  }
   block_3:
     display_plugin: block
     id: block_3
@@ -1067,7 +1062,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -1285,7 +1279,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
