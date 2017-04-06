@@ -1,15 +1,7 @@
 bundle: govcms_content_types
 excluded:
   - block.block.govcmsui_main_menu
-  - field.field.node.blog_article.body
-  - field.field.node.blog_article.field_attachments
-  - field.field.node.blog_article.field_featured_image
-  - field.field.node.blog_article.field_meta_tags
   - system.menu.main
 required:
-  - core.entity_form_display.node.page.default
-  - core.entity_view_display.node.page.default
-  - core.entity_view_display.node.page.full
-  - core.entity_view_display.node.page.teaser
   - field.field.node.page.field_categories
   - taxonomy.vocabulary.categories
