@@ -22,5 +22,5 @@ dependencies:
   - user
   - views
   - workbench_moderation
-version: 8.x-0.4
+version: 8.x-0.3
 package: 'govCMS content types'
