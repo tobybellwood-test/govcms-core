@@ -1,0 +1,47 @@
+dist: trusty
+sudo: required
+language: php
+
+branches:
+  except:
+     - master
+
+cache:
+  bundler: true
+  apt: true
+  directories:
+    - "$HOME/.composer/cache"
+    - "$HOME/.drush/cache"
+    - "$HOME/.npm"
+
+php:
+  - '5.6'
+  - '7.0'
+  - '7.1'
+  - hhvm
+
+# Build matrix options
+matrix:
+  allow_failures:
+    - php: hhvm
+  fast_finish: true
+
+# Before install, failures in this section will result in build status 'error'
+before_install:
+  - phpenv config-rm xdebug.ini
+  - travis_retry composer self-update && composer --version
+  - mysql -e 'CREATE DATABASE govcms;'
+
+install:
+   - composer require govcms/govcms-config
+   - travis_retry composer install
+
+before_script:
+  # Initialize xvfb (see https://docs.travis-ci.com/user/gui-and-headless-browsers)
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3
+
+# Script, failures in this section will result in build status 'failed'
+script:
+  phpunit --configuration ./core --group govcms
