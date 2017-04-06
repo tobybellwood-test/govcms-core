@@ -57,7 +57,7 @@ To develop on or patch against govCMS, the source files should be downloaded and
 govCMS source may be downloaded using git
 
 ```
-git clone -b 8.x-3.x git@github.com:govCMS/govCMS.git
+git clone -b 8.x-3.x git@github.com:govCMS/govcms-core.git
 ```
 
 ## Patching govCMS
