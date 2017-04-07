@@ -49,6 +49,7 @@ dependencies:
   # Contrib modules
   - admin_toolbar
   - adminimal_admin_toolbar
+  - bootstrap_layouts
   - chosen
   - config_update
   - contact_storage
@@ -92,6 +93,7 @@ dependencies:
   - seckit
   - simple_sitemap
   - token
+  - views_bootstrap
   - video_embed_field
   - video_embed_media
   - views_infinite_scroll
