@@ -1,0 +1,106 @@
+<?php
+
+use Drupal\taxonomy\Entity\Term;
+use \Drupal\node\Entity\Node;
+use \Drupal\file\Entity\File;
+
+
+define("GOVCMS_TERM_A", "govCMS Term A");
+define("GOVCMS_TERM_B", "govCMS Term B");
+
+
+/**
+ * Implements hook_install().
+ */
+function govcms_default_content_install() {
+    $moduleHandler = \Drupal::service('module_handler');
+
+    $term = Term::create([
+        'name' => GOVCMS_TERM_A,
+        'vid' => 'categories',
+    ]);
+    $term->save();
+    \Drupal::database()->insert('govcms_default_content')->fields(
+        array(
+            'id' => $term->id(),
+            'type' => 'tid',
+        )
+    )->execute();
+
+    $term = Term::create([
+        'name' => GOVCMS_TERM_B,
+        'vid' => 'categories',
+    ]);
+    $term->save();
+    \Drupal::database()->insert('govcms_default_content')->fields(
+        array(
+            'id' => $term->id(),
+            'type' => 'tid',
+        )
+    )->execute();
+
+    if ($moduleHandler->moduleExists('govcms_content_types_govcms_blog_article')){
+        // Blog article exists, let's create some!
+
+        // Create file object from remote URL.
+        //$data = file_get_contents('https://www.drupal.org/files/druplicon.small_.png');
+        //$file = file_save_data($data, 'public://druplicon.png', FILE_EXISTS_REPLACE);
+
+        $year_ago = strtotime("-1 year", time());
+        $node = Node::create([
+            'type'  => 'blog_article',
+            'title' => 'govCMS Blog Article test',
+            'status' => 1,
+            'created' => $year_ago,
+            'changed' => $year_ago,
+        ]);
+        $node->body->value = 'Some lorem ipsum here?';
+        $node->field_categories = [
+            ['target_id' => $term->id()]
+        ];
+        $node->set('moderation_state', "published");
+        $node->setPublished();
+        $node->save();
+        \Drupal::database()->insert('govcms_default_content')->fields(
+            array(
+                'id' => $node->id(),
+                'type' => 'nid',
+            )
+        )->execute();
+    }
+}
+
+
+/**
+ * Implements hook_uninstall().
+ */
+function govcms_default_content_uninstall() {
+    // Delete all taxonomy terms
+    $taxonomy_term = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+    $query = \Drupal::database()->select('govcms_default_content', 'c')
+        ->fields('c', array('id', 'type'))
+        ->condition('c.type', 'tid', '=');
+    $executed_query = $query->execute();
+
+    $results = $executed_query->fetchAll(\PDO::FETCH_OBJ);
+
+    foreach($results as $term) {
+        $terms = $taxonomy_term->loadByProperties(['tid' => $term->id]);
+        $taxonomy_term->delete($terms);
+    }
+
+
+    // Delete all nodes
+    $entity_node = \Drupal::entityTypeManager()->getStorage('node');
+    $query = \Drupal::database()->select('govcms_default_content', 'c')
+        ->fields('c', array('id', 'type'))
+        ->condition('c.type', 'nid', '=');
+    $executed_query = $query->execute();
+
+    $results = $executed_query->fetchAll(\PDO::FETCH_OBJ);
+
+    foreach($results as $node) {
+        $nodes = $entity_node->loadByProperties(['nid' => $node->id]);
+        $entity_node->delete($nodes);
+    }
+}
