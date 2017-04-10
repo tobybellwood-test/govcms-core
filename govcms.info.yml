@@ -106,6 +106,7 @@ dependencies_optional:
   - govcms_content_types_govcms_blog_article
   - govcms_content_types_govcms_event
   - govcms_content_types_govcms_news_and_media
+  - govcms_content_types_govcms_foi
 
 themes:
   - govcmsui
