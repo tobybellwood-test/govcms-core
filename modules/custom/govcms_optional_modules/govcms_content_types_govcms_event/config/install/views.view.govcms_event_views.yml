@@ -1153,7 +1153,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<span class=\"fa-stack fa-3x\">\n  <i class=\"fa fa-calendar-o fa-stack-2x\"></i>\n  <strong class=\"fa-stack-1x calendar-text\">{{ field_date_range__value|date('j') }}</strong>\n</span>"
+            text: "<span class=\"fa-stack fa-5x\">\n  <i class=\"fa fa-calendar-o fa-stack-2x\"></i>\n  <strong class=\"fa-stack-1x calendar-day-text\">{{ field_date_range__value|date('j') }}</strong>\n  <strong class=\"fa-stack-1x calendar-month-text\">{{ field_date_range__value|date('M')|upper }}</strong>\n</span>"
             make_link: false
             path: ''
             absolute: false
