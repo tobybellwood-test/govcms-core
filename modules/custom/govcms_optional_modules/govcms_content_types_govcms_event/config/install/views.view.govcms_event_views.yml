@@ -1142,18 +1142,18 @@ display:
           separator: ''
           hide_empty: false
       fields:
-        field_date_range:
-          id: field_date_range
+        field_date_range_1:
+          id: field_date_range_1
           table: node__field_date_range
           field: field_date_range
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
-          exclude: false
+          label: (day)
+          exclude: true
           alter:
             alter_text: true
-            text: "<span class=\"fa-stack fa-5x\">\n  <i class=\"fa fa-calendar-o fa-stack-2x\"></i>\n  <strong class=\"fa-stack-1x calendar-day-text\">{{ field_date_range__value|date('j') }}</strong>\n  <strong class=\"fa-stack-1x calendar-month-text\">{{ field_date_range__value|date('M')|upper }}</strong>\n</span>"
+            text: '{{ field_date_range_1 }}'
             make_link: false
             path: ''
             absolute: false
@@ -1168,9 +1168,139 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
+            max_length: 2
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: true
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: daterange_custom
+          settings:
+            timezone_override: ''
+            date_format: j
+            separator: ' - '
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_date_range_2:
+          id: field_date_range_2
+          table: node__field_date_range
+          field: field_date_range
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: (month)
+          exclude: true
+          alter:
+            alter_text: true
+            text: '{{ field_date_range_2 }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 3
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: true
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: daterange_custom
+          settings:
+            timezone_override: ''
+            date_format: M
+            separator: ' - '
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_date_range:
+          id: field_date_range
+          table: node__field_date_range
+          field: field_date_range
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<span class=\"fa-stack fa-5x\">\n  <i class=\"fa fa-calendar-o fa-stack-2x\"></i>\n  <strong class=\"fa-stack-1x calendar-day-text\">{{ field_date_range_1 }}</strong>\n  <strong class=\"fa-stack-1x calendar-month-text\">{{ field_date_range_2 }}</strong>\n</span>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 2
+            word_boundary: false
+            ellipsis: false
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -1191,11 +1321,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: daterange_custom
+          type: daterange_plain
           settings:
             timezone_override: ''
-            date_format: j
-            separator: '-'
+            separator: ' - '
           group_column: value
           group_columns: {  }
           group_rows: true
