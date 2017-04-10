@@ -49,7 +49,6 @@ dependencies:
   # Contrib modules
   - admin_toolbar
   - adminimal_admin_toolbar
-  - bootstrap_layouts
   - chosen
   - config_update
   - contact_storage
