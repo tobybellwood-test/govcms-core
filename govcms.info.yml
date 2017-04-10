@@ -69,7 +69,6 @@ dependencies:
   - field_group
   - honeypot
   - inline_entity_form
-  - layout_plugin
   - linkit
   - media_entity
   - media_entity_document
