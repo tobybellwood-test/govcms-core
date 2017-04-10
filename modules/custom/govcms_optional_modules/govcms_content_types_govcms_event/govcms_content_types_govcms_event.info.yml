@@ -9,7 +9,6 @@ dependencies:
   - entity_browser
   - field
   - file
-  - govcms_content_types_govcms_blog_article
   - image
   - menu_ui
   - metatag
