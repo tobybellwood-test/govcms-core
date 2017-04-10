@@ -3,7 +3,6 @@ excluded:
   - user.role.news_and_media_creator
   - user.role.news_and_media_reviewer
 required:
-  - block.block.mainnavigation
   - field.storage.node.body
   - field.storage.node.field_attachments
   - field.storage.node.field_categories

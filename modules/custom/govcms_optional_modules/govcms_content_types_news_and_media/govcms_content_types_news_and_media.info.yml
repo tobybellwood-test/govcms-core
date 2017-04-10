@@ -7,7 +7,6 @@ dependencies:
   - entity_browser
   - field
   - file
-  - govcms_content_types_govcms_event
   - image
   - menu_ui
   - metatag
