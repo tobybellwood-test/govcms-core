@@ -71,6 +71,13 @@ class govCMSInstallerForm extends FormBase {
       '#default_value' => TRUE,
     ];
 
+    $form['govcms_news_and_media'] = [
+      '#type' => 'checkbox',
+      '#title' => 'govCMS news and media',
+      '#description' => t("Defines news and media content type"),
+      '#default_value' => TRUE,
+    ];
+
     $form['warning'] = [
       '#markup' => "<p><strong>Warning:</strong> Don't install the optional modules if you're upgrading from Drupal 7 - you need to start from a blank site.</p>",
     ];
@@ -99,12 +106,20 @@ class govCMSInstallerForm extends FormBase {
       $govcms_event = !empty($input['govcms_event']);
     }
 
+      if (isset($input['govcms_news_and_media'])) {
+          $govcms_news_and_media = !empty($input['govcms_news_and_media']);
+      }
+
     if ($govcms_blog) {
       $this->moduleInstaller->install(['govcms_content_types_govcms_blog_article']);
     }
 
     if ($govcms_event) {
       $this->moduleInstaller->install(['govcms_content_types_govcms_event']);
+    }
+
+    if ($govcms_news_and_media) {
+      $this->moduleInstaller->install(['govcms_content_types_govcms_news_and_media']);
     }
   }
 }
