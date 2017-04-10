@@ -1842,7 +1842,7 @@ display:
       path: event/show
       menu:
         type: none
-        title: Blog
+        title: Events
         description: ''
         expanded: false
         parent: ''
