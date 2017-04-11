@@ -10,7 +10,7 @@ dependencies:
     - govcmsui
 id: views_block__govcms_event_views_block_4
 theme: govcmsui
-region: sidebar_first
+region: sidebar_second
 weight: 0
 provider: null
 plugin: 'views_block:govcms_event_views-block_4'
