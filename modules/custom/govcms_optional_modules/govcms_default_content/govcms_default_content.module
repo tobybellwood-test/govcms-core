@@ -41,12 +41,23 @@ function govcms_default_content_install() {
         )
     )->execute();
 
+    $files = array();
+    // Create file object from remote URL.
+    for ($x = 1; $x <= 5; $x++) {
+        $data = file_get_contents(drupal_get_path('module', 'govcms_default_content').'/images/'.$x.'.jpeg');
+        $file = file_save_data($data, 'public://govcms_'.$x.'.jpeg', FILE_EXISTS_REPLACE);
+        $files[] = $file;
+        \Drupal::database()->insert('govcms_default_content')->fields(
+            array(
+                'id' => $file->id(),
+                'selector' => 'fid',
+                'type' => 'file',
+            )
+        )->execute();
+    }
+
     if ($moduleHandler->moduleExists('govcms_content_types_govcms_blog_article')){
         // Blog article exists, let's create some!
-
-        // Create file object from remote URL.
-        //$data = file_get_contents('https://www.drupal.org/files/druplicon.small_.png');
-        //$file = file_save_data($data, 'public://druplicon.png', FILE_EXISTS_REPLACE);
 
         $day_ago = strtotime("-1 day", time());
         $node = Node::create([
@@ -60,6 +71,11 @@ function govcms_default_content_install() {
         $node->field_categories = [
             ['target_id' => $term->id()]
         ];
+        $random_file = $files[array_rand($files)];
+        $node->field_featured_image->setValue([
+            'target_id' => $random_file->id(),
+        ]);
+
         $node->set('moderation_state', "published");
         $node->setPublished();
         $node->save();
@@ -91,6 +107,10 @@ function govcms_default_content_install() {
         $node->field_location->value = 'One Canberra Avenue, Forrest, ACT, 2603';
         $node->field_date_range->value = date('Y-m-d\TH:i:s', $month_today);
         $node->field_date_range->end_value = date('Y-m-d\TH:i:s', $month_day_today);
+        $random_file = $files[array_rand($files)];
+        $node->field_featured_image->setValue([
+            'target_id' => $random_file->id(),
+        ]);
         $node->set('moderation_state', "published");
         $node->setPublished();
         $node->save();
@@ -152,6 +172,10 @@ Suspendisse feugiat sollicitudin mattis. Vivamus in tincidunt tortor. Aliquam or
             ['target_id' => $terma->id()]
         ];
         $node->field_media_release_type->value = 'news';
+        $random_file = $files[array_rand($files)];
+        $node->field_featured_image->setValue([
+            'target_id' => $random_file->id(),
+        ]);
         $node->set('moderation_state', "published");
         $node->setPublished();
         $node->save();
@@ -197,5 +221,19 @@ function govcms_default_content_uninstall() {
     foreach($results as $node) {
         $nodes = $entity_node->loadByProperties(['nid' => $node->id]);
         $entity_node->delete($nodes);
+    }
+
+    // Delete all files
+    $entity_file = \Drupal::entityTypeManager()->getStorage('file');
+    $query = \Drupal::database()->select('govcms_default_content', 'c')
+        ->fields('c', array('id', 'type'))
+        ->condition('c.selector', 'fid', '=');
+    $executed_query = $query->execute();
+
+    $results = $executed_query->fetchAll(\PDO::FETCH_OBJ);
+
+    foreach($results as $file) {
+        $files = $entity_file->loadByProperties(['fid' => $file->id]);
+        $entity_file->delete($files);
     }
 }
