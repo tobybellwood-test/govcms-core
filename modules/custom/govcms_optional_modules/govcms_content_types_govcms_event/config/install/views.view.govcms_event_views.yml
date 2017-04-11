@@ -1005,7 +1005,7 @@ display:
     display_options:
       display_extenders: {  }
       display_description: ''
-      title: 'Next Event'
+      title: ''
       defaults:
         title: false
         pager: false
@@ -1131,9 +1131,9 @@ display:
       style:
         type: default
         options:
-          row_class: list-group-item
+          grouping: {  }
+          row_class: ''
           default_row_class: false
-          uses_fields: false
       row:
         type: fields
         options:
@@ -1142,6 +1142,71 @@ display:
           separator: ''
           hide_empty: false
       fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: title
+          plugin_id: field
         field_date_range_1:
           id: field_date_range_1
           table: node__field_date_range
@@ -1283,7 +1348,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<span class=\"fa-stack fa-5x\">\n  <i class=\"fa fa-calendar-o fa-stack-2x\"></i>\n  <strong class=\"fa-stack-1x calendar-day-text\">{{ field_date_range_1 }}</strong>\n  <strong class=\"fa-stack-1x calendar-month-text\">{{ field_date_range_2 }}</strong>\n</span>"
+            text: "<h3>Next event</h3>\n<span class=\"fa-stack fa-5x\">\n  <i class=\"fa fa-calendar-o fa-stack-2x\"></i>\n  <strong class=\"fa-stack-1x calendar-day-text\">{{ field_date_range_1 }}</strong>\n  <strong class=\"fa-stack-1x calendar-month-text\">{{ field_date_range_2 }}</strong>\n</span>\n<h4>{{ title }}</h4>"
             make_link: false
             path: ''
             absolute: false
@@ -1336,53 +1401,7 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          entity_type: node
-          entity_field: title
-          label: ''
-          alter:
-            alter_text: false
-            make_link: false
-            absolute: false
-            trim: false
-            word_boundary: false
-            ellipsis: false
-            strip_tags: false
-            html: false
-          hide_empty: false
-          empty_zero: false
-          settings:
-            link_to_entity: true
-          plugin_id: field
-          relationship: none
-          group_type: group
-          admin_label: ''
-          exclude: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -1842,7 +1861,7 @@ display:
       path: event/show
       menu:
         type: none
-        title: Events
+        title: Blog
         description: ''
         expanded: false
         parent: ''
