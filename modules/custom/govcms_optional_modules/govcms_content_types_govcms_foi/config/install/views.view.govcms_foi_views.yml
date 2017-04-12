@@ -1086,7 +1086,7 @@ display:
       path: about/foi/show
       menu:
         type: none
-        title: Blog
+        title: 'FOI Requests'
         description: ''
         expanded: false
         parent: ''

@@ -1147,7 +1147,7 @@ display:
       path: news-and-media/show
       menu:
         type: none
-        title: Blog
+        title: 'News and Media'
         description: ''
         expanded: false
         parent: ''
