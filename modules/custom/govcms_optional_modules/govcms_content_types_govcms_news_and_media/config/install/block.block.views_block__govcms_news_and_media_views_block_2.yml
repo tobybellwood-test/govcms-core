@@ -11,7 +11,7 @@ dependencies:
 id: views_block__govcms_news_and_media_views_block_2
 theme: govcmsui
 region: sidebar_second
-weight: 0
+weight: -1
 provider: null
 plugin: 'views_block:govcms_news_and_media_views-block_2'
 settings:

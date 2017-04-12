@@ -11,7 +11,7 @@ dependencies:
 id: views_block__govcms_event_views_block_2
 theme: govcmsui
 region: sidebar_second
-weight: 0
+weight: -4
 provider: null
 plugin: 'views_block:govcms_event_views-block_2'
 settings:
