@@ -1,0 +1,13 @@
+{
+  "name": "govCMS",
+  "version": "1.0.0",
+  "description": "govCMS distribution libraries",
+  "scripts": {
+    "install-libraries": "npm install && bower install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bower": "1.7.x"
+  },
+  "license": "GPL-2.0+"
+}
