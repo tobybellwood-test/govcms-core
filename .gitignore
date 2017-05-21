@@ -13,7 +13,9 @@ vendor/.git
 
 # Sass
 .sass-cache
-*.css.map
+
+# Node
+node_modules/
 
 # Drupal console
 console/

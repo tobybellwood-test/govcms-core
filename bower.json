@@ -1,5 +1,5 @@
 {
-  "name": "govCMS",
+  "name": "govcms",
   "description": "govCMS libraries",
   "dependencies": {
     "chosen_v1.6.1": "https://github.com/harvesthq/chosen/releases/download/v1.6.1/chosen_v1.6.1.zip"
