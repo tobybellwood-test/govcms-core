@@ -33,7 +33,7 @@ before_install:
   - mysql -e 'CREATE DATABASE govcms;'
 
 install:
-   - composer require govcms/govcms-config
+   - composer global require phing/phing
    - travis_retry composer install
 
 before_script:
