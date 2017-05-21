@@ -1,5 +1,7 @@
 # govCMS (Drupal 8)
 
+[![Build Status](https://travis-ci.org/govCMS/govcms-core.svg?branch=8.x-1.x)](https://travis-ci.org/govCMS/govcms-core)
+
 ## Installation
 
 ### Server Requirements
